@@ -34,6 +34,14 @@ searchInput.addEventListener("input", async (event) => {
     propo.textContent = gra.name;
     propo.classList.add("propo");
     suggestionsContainer.appendChild(propo);
+    propo.addEventListener("click", (event) => {
+      const text = (event.target as HTMLElement).textContent;
+      searchInput.value = text;
+      const propoElementy = document.querySelectorAll(".propo");
+      propoElementy.forEach((propo) => {
+        propo.remove();
+      });
+    });
   });
 });
 
@@ -49,3 +57,5 @@ async function fetchGames(query: string): Promise<Game[]> {
     return [];
   }
 }
+
+function suggestionClick() {}

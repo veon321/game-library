@@ -28,6 +28,14 @@ searchInput.addEventListener("input", (event) => __awaiter(void 0, void 0, void 
         propo.textContent = gra.name;
         propo.classList.add("propo");
         suggestionsContainer.appendChild(propo);
+        propo.addEventListener("click", (event) => {
+            const text = event.target.textContent;
+            searchInput.value = text;
+            const propoElementy = document.querySelectorAll(".propo");
+            propoElementy.forEach((propo) => {
+                propo.remove();
+            });
+        });
     });
 }));
 function fetchGames(query) {
@@ -43,3 +51,4 @@ function fetchGames(query) {
         }
     });
 }
+function suggestionClick() { }
