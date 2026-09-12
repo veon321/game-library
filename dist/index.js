@@ -26,6 +26,7 @@ searchInput.addEventListener("input", (event) => __awaiter(void 0, void 0, void 
     limitedGry.forEach((gra) => {
         const propo = document.createElement("p");
         propo.textContent = gra.name;
+        propo.classList.add("propo");
         suggestionsContainer.appendChild(propo);
     });
 }));

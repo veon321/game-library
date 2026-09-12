@@ -41,3 +41,7 @@ input:focus {
   display: flex;
   flex-direction: row;
 }
+
+.propo {
+  cursor: pointer;
+}

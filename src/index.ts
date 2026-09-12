@@ -32,6 +32,7 @@ searchInput.addEventListener("input", async (event) => {
   limitedGry.forEach((gra: Game) => {
     const propo = document.createElement("p");
     propo.textContent = gra.name;
+    propo.classList.add("propo");
     suggestionsContainer.appendChild(propo);
   });
 });
