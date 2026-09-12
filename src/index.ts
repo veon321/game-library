@@ -10,6 +10,7 @@ const suggestionsContainer = document.getElementById(
   "suggestions",
 ) as HTMLElement;
 const API_KEY = "7f4909acb44c4aa692a3077158f15860";
+const addgame = document.getElementById("add-game") as HTMLElement;
 
 searchInput.addEventListener("input", async (event) => {
   const wpisanyTekst = (event.target as HTMLInputElement).value.trim();
@@ -45,6 +46,13 @@ searchInput.addEventListener("input", async (event) => {
   });
 });
 
+async function addGameToLibrary() {
+  console.log(searchInput.value);
+  const gry = await fetchGames(searchInput.value);
+  console.log(gry[0]);
+}
+addgame.addEventListener("click", addGameToLibrary);
+
 async function fetchGames(query: string): Promise<Game[]> {
   try {
     const response = await fetch(
@@ -57,5 +65,3 @@ async function fetchGames(query: string): Promise<Game[]> {
     return [];
   }
 }
-
-function suggestionClick() {}

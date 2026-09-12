@@ -45,3 +45,15 @@ input:focus {
 .propo {
   cursor: pointer;
 }
+
+.game-library {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.game {
+  margin-top: 20px;
+  background-color: antiquewhite;
+  padding: 120px;
+}

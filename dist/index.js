@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const searchInput = document.getElementById("search-input");
 const suggestionsContainer = document.getElementById("suggestions");
 const API_KEY = "7f4909acb44c4aa692a3077158f15860";
+const addgame = document.getElementById("add-game");
 searchInput.addEventListener("input", (event) => __awaiter(void 0, void 0, void 0, function* () {
     const wpisanyTekst = event.target.value.trim();
     if (wpisanyTekst.length < 3) {
@@ -38,6 +39,14 @@ searchInput.addEventListener("input", (event) => __awaiter(void 0, void 0, void 
         });
     });
 }));
+function addGameToLibrary() {
+    return __awaiter(this, void 0, void 0, function* () {
+        console.log(searchInput.value);
+        const gry = yield fetchGames(searchInput.value);
+        console.log(gry[0]);
+    });
+}
+addgame.addEventListener("click", addGameToLibrary);
 function fetchGames(query) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -51,4 +60,3 @@ function fetchGames(query) {
         }
     });
 }
-function suggestionClick() { }
